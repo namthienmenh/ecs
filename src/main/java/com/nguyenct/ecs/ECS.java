@@ -14,5 +14,7 @@ public interface ECS {
 
     //get all entity of component
     ComponentMapper mapperOf(Class<? extends Object> componentClass);
-    Query query(Class<? extends Object> componentClass);
+    default Query query(Class<? extends Object> componentClass) {
+        return mapperOf(componentClass).query();
+    }
 }
