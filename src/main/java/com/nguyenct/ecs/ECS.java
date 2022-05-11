@@ -11,5 +11,8 @@ public interface ECS {
     List<Object> removeEntity(int entity);
     void removeComponent(int entity, Class... componentClass);
     void setComponent(int entity, Object... components);
-    Query query(Class componentClass);
+
+    //get all entity of component
+    Collection<? extends ComponentMapper> getAllComponentMappers();
+    <T> ComponentMapper<T> mapperOf(Class<T> componentClass);
 }

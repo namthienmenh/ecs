@@ -5,10 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 public interface MapperSetterECS extends ECS {
-    //get all entity of component
-    Collection<? extends ComponentMapper> getAllComponentMappers();
-    <T> ComponentMapper<T> mapperOf(Class<T> componentClass);
-
     Collection<? extends ComponentSetter> getAllComponentSetter();
     <T> ComponentSetter<T> setterOf(Class<T> componentClass);
 
@@ -64,9 +60,5 @@ public interface MapperSetterECS extends ECS {
             setter.remove(entity);
         }
         addComponents(entity, components);
-    }
-
-    default Query query(Class componentClass) {
-        return mapperOf(componentClass).query();
     }
 }
