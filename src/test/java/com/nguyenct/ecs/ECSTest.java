@@ -69,6 +69,7 @@ class ECSTest {
             ecs.addComponents(pos, component1, component2);
             compareSampleAndEntity(sample1, mapper1);
             compareSampleAndEntity(sample2, mapper2);
+
         }
 
         for (int i = 1; i < length; i++) {
