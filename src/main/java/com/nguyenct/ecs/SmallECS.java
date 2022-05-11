@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SmallECS implements ECS {
+public class SmallECS implements MapperSetterECS {
 
     private int objectCounter = 0;
     private Map<Class, SmallComponentMapperSetter> componentMap = new HashMap<>();
