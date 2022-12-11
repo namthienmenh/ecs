@@ -1,7 +1,5 @@
 package com.nguyenct.ecs;
 
-import java.util.List;
-
 public interface ComponentSetter<T> {
     void listener(ComponentListener<T> listener);
     void removeListener(ComponentListener<T> listener);

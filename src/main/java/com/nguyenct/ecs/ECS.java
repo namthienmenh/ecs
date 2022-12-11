@@ -1,6 +1,5 @@
 package com.nguyenct.ecs;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,4 +14,8 @@ public interface ECS {
     //get all entity of component
     Collection<? extends ComponentMapper> getAllComponentMappers();
     <T> ComponentMapper<T> mapperOf(Class<T> componentClass);
+
+    GameSystem getSystem(String systemName);
+    List<GameSystem> getSystems();
+    void update(int frame);
 }

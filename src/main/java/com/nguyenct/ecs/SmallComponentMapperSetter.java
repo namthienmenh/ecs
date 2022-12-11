@@ -29,6 +29,9 @@ public class SmallComponentMapperSetter<T> implements ComponentMapper<T>, Compon
 
     @Override
     public void set(int entity, T component) {
+        if (component == null) {
+            return;
+        }
         ensureCapacity(entity);
         T old = componentStorage[entity];
         componentStorage[entity] = component;
@@ -67,7 +70,7 @@ public class SmallComponentMapperSetter<T> implements ComponentMapper<T>, Compon
 
     @Override
     public boolean has(int entity) {
-        if (entity > componentStorage.length) {
+        if (entity >= componentStorage.length) {
             return false;
         }
         return componentStorage[entity] != null;

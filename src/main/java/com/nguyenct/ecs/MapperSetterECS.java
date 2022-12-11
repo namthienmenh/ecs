@@ -20,7 +20,9 @@ public interface MapperSetterECS extends ECS {
     default void addComponents(int entity, Object... components) {
         ensureEntityCounter(entity);
         for (Object component : components) {
-            setterOf(component.getClass()).setObject(entity, component);
+            if (component != null) {
+                setterOf(component.getClass()).setObject(entity, component);
+            }
         }
     }
 
